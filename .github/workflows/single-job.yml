@@ -9,24 +9,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout or get code
+      - name: Checkout or get code into runner machine
         uses: actions/checkout@v5
 
-      - name: Set up or install node. js
+      - name: Set up or install node. js 
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install dependencies to available into runner machine
         run: npm ci
 
       - name: Run lint
         run: npm run lint
 
-      - name: Run tests
-        run: npm test
+      - name: Run tests code
+        run: npm run test
 
-      - name: Build the project
+      - name: Build the project or code
         run: npm run build
 
       - name: Simulate deployment
